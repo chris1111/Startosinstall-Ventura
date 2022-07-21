@@ -5,7 +5,7 @@ Apps that uses Apple's startosinstall tool
 This installer allows you to create a macOS Ventura 13 deployable SSD or to upgrade macOS Monterey System Update.
 
 	•	Credit: Apple
-	◦	Tester: arcade33, bisdak2020, Bumbay, djams, Ray-Du
+	◦	Tester: arcade33, Bumbay, djams, Ray-Du
   
   Download ➤ [Startosinstall Ventura.command](https://github.com/chris1111/Startosinstall-Ventura/raw/Master/Startosinstall%20Ventura.zip)
   
