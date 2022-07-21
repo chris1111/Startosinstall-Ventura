@@ -11,4 +11,4 @@ This installer allows you to create a macOS Ventura 13 deployable SSD or to upgr
   
   ![Startosinstall Ventura](https://user-images.githubusercontent.com/6248794/180323585-a4cb9ef6-9eb7-4357-bb79-55ed75d6752a.png)
   
-  ![Startosinstall Ventura-2](https://user-images.githubusercontent.com/6248794/180325942-56928082-8b70-4236-ac23-c1150946a4a4.png)
+  ![Startosinstall Ventura-2](https://user-images.githubusercontent.com/6248794/180327124-dd35d321-5628-4a17-bfa6-fa7e893ae88f.png)
