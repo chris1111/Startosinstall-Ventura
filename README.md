@@ -1,8 +1,8 @@
 # Startosinstall-Ventura
 
-Apps that uses Apple's startosinstall tool
+Script that uses Apple's startosinstall tool
 
-This installer allows you to create a macOS Ventura 13 deployable SSD or to upgrade macOS Monterey System Update.
+This Script allows you to create a macOS Ventura 13 deployable SSD or to upgrade macOS Monterey System Update.
 
 	•	Credit: Apple
 	◦	Tester: arcade33, Bumbay, djams2904, Ray-Du
