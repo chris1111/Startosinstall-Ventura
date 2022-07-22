@@ -39,70 +39,52 @@ repeat
 end repeat
 EOD
 
-osascript <<EOD
-tell application "Finder"
-	set allVolumes to disks
-	
-	repeat with aVolume in allVolumes
-		
-		if (name of aVolume as text) is equal to "Ventura-HD" then
-			set name of aVolume to "Ventura_HD"
-			
-		end if
-	end repeat
-end tell
-EOD
 
+# Get input folder of usbdisk disk 
+  usbdiskpath=`/usr/bin/osascript << EOT
+    tell application "Finder"
+        activate
+        set folderpath to choose folder default location "/Volumes" with prompt "Select your SSD / HD"
+    end tell 
+    return (posix path of folderpath) 
+  EOT`
+
+# Parse disk volume
+usbdisk=$( echo $usbdiskpath | awk -F '\/Volumes\/' '{print $2}' | cut -d '/' -f1 )
+disknum=$( diskutil list | grep "$usbdisk" | awk -F 'disk' '{print $2}' | cut -d 's' -f1 )
+devdisk="/dev/disk$disknum"
+# check rdisk
+devdiskr="/dev/rdisk$disknum"
+# Get Drive size
+drivesize=$( diskutil list | grep "disk$disknum" | grep "0\:" | cut -d "*" -f2 | awk '{print $1 " " $2}' )
+
+source=$inputfile
+dest="$drivesize $usbdisk (disk$disknum)"
+outputfile=$devdiskr
+check=$source
+echo "⬇︎ "
 echo "-------------------------------------"
-echo "Volume Chooser
-The Ventura-HD volume name will be used for Startosinstall" 
+echo "$usbdiskpath " 
+echo "-------------------------------------"
+Sleep 2	
+
+
+# Get image file location
+  imagepath=`/usr/bin/osascript << EOT
+    tell application "Finder"
+        activate
+        set imagefilepath to choose file default location "/Applications" with prompt "Select your Install macOS Ventura.app"
+    end tell 
+    return (posix path of imagefilepath) 
+  EOT`
+
+# Parse vars for Install macOS
+inputfile=$imagepath
+echo "⬇︎ "	
+echo "-------------------------------------"
+echo "$inputfile "
 echo "-------------------------------------"
 Sleep 2
-
-
-# get Volume path
-if [ "$2" == "" ]; then
-
-echo  "`tput setaf 7``tput sgr0``tput bold``tput setaf 10`Move the volume to the window \ followed by [ENTER]`tput sgr0` `tput setaf 7``tput sgr0`  "
-
-echo " " 
-echo " " 
-
-while [ -z "$Volume" ]; do
-read Volume
-done
-if [ ! -d "$Volume" ]; then echo "$Volume not found"; exit; fi 
-else
-Volume="$2"
-fi
-
-
-Sleep 1
-/usr/sbin/diskutil rename "$Volume" "Ventura-HD"
-	
-echo "-------------------------------------"
-echo "Install macOS Ventura.app Chooser" 
-echo "-------------------------------------"
-Sleep 2
-
-# get Installer path
-if [ "$2" == "" ]; then
-
-echo  "`tput setaf 7``tput sgr0``tput bold``tput setaf 10`Move to the window your Install macOS Ventura.app\ followed by [ENTER]`tput sgr0` `tput setaf 7``tput sgr0`  "
-
-echo " " 
-echo " " 
-
-while [ -z "$Installer" ]; do
-read Installer
-done
-if [ ! -d "$Installer" ]; then echo "$Installer not found"; exit; fi 
-else
-Installer="$2"
-fi
-	
-Sleep 2
-
 
 echo "Enter to the macOS startosinstall
 The system will reboot when its finish.
@@ -110,5 +92,5 @@ The system will reboot when its finish.
 
 echo " " 
 
-sudo "$Installer"/Contents/Resources/startosinstall --agreetolicense --volume /Volumes/Ventura-HD --rebootdelay 5 --nointeraction
+sudo "$inputfile"/Contents/Resources/startosinstall --agreetolicense --volume /"$usbdiskpath" --rebootdelay 5 --nointeraction
 
