@@ -1,6 +1,20 @@
 # Startosinstall-Ventura
 
-Script that uses Apple's startosinstall tool
+Script that uses Apple's startosinstall tool ⬇︎
+```
+--license, prints the user license agreement only.
+--agreetolicense, agree to the license you printed with --license.
+--rebootdelay, how long to delay the reboot at the end of preparing. This delay is in seconds and has a maximum of 300 (5 minutes).
+--pidtosignal, Specify a PID to which to send SIGUSR1 upon completion of the prepare phase. To bypass "rebootdelay" send SIGUSR1 back to startosinstall.
+--installpackage, the path of a package (built with productbuild(1)) to install after the OS installation is complete; this option can be specified multiple times.
+--eraseinstall, (Requires APFS) Erase all volumes and install to a new one. Optionally specify the name of the new volume with --newvolumename.
+--newvolumename, the name of the volume to be created with --eraseinstall.
+--preservecontainer, preserves other volumes in your APFS container when using --eraseinstall.
+--forcequitapps, on restart applications are forcefully quit. This is the default if no users are logged in.
+--nointeraction, This option, along with the --agreetolicense option, is required to run the startosinstall command silently.
+--usage, prints this message.
+```
+
 
 This Script allows you to create a macOS Ventura 13 deployable SSD or to upgrade macOS Monterey System Update.
 
