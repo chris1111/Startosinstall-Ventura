@@ -49,6 +49,12 @@ EOD
     return (posix path of folderpath) 
   EOT`
 
+  # Cancel is user selects Cancel
+  if [ ! "$usbdiskpath" ] ; then
+    osascript -e 'display notification "Program closing" with title "'"$apptitle"'" subtitle "User cancelled"'
+    exit 0
+  fi
+
 # Parse disk volume
 usbdisk=$( echo $usbdiskpath | awk -F '\/Volumes\/' '{print $2}' | cut -d '/' -f1 )
 disknum=$( diskutil list | grep "$usbdisk" | awk -F 'disk' '{print $2}' | cut -d 's' -f1 )
@@ -77,6 +83,12 @@ Sleep 2
     end tell 
     return (posix path of imagefilepath) 
   EOT`
+
+  # Cancel is user selects Cancel
+  if [ ! "$imagepath" ] ; then
+    osascript -e 'display notification "Program closing" with title "'"$apptitle"'" subtitle "User cancelled"'
+    exit 0
+  fi
 
 # Parse vars for Install macOS
 inputfile=$imagepath
