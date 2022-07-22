@@ -9,6 +9,14 @@ This Script allows you to create a macOS Ventura 13 deployable SSD or to upgrade
   
   Download ➤ [Startosinstall Ventura.command](https://github.com/chris1111/Startosinstall-Ventura/raw/Master/Startosinstall%20Ventura.zip)
   
-  ![Startosinstall Ventura](https://user-images.githubusercontent.com/6248794/180323585-a4cb9ef6-9eb7-4357-bb79-55ed75d6752a.png)
+![Startosinstall Ventura](https://user-images.githubusercontent.com/6248794/180323585-a4cb9ef6-9eb7-4357-bb79-55ed75d6752a.png)
+
+![Screen Shot Disk](https://user-images.githubusercontent.com/6248794/180342523-1d073a6f-dfbe-4755-84ee-9f637fa53b01.png)
   
-  ![Startosinstall Ventura-2](https://user-images.githubusercontent.com/6248794/180327124-dd35d321-5628-4a17-bfa6-fa7e893ae88f.png)
+![Screen Shot 1](https://user-images.githubusercontent.com/6248794/180342518-b99e92d6-3f03-441a-954c-a23cd76046a1.png)
+
+![Screen Shot 2](https://user-images.githubusercontent.com/6248794/180342521-3f8fb708-9544-43df-b2f5-5efc251e190f.png)
+
+![Screen Shot 0](https://user-images.githubusercontent.com/6248794/180342516-10d227da-3deb-4a82-9200-11da57bc3198.png)
+
+
