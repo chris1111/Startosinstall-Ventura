@@ -97,6 +97,20 @@ echo "-------------------------------------"
 echo "$inputfile "
 echo "-------------------------------------"
 Sleep 2
+# Confirmation
+response=$(osascript -e 'tell app "System Events" to display dialog "Please confirm your choice then press the OK button\n\nSource: \n'"$imagepath"' \n\nDestination: \n'"$dest"' \n\n\nThe volume will be use for the Installer macOS" buttons {"Cancel", "OK"} default button 2 with title "'"$apptitle"' '"$version"'" with icon POSIX file "'"$iconfile"'" ')
+answer=$(echo $response | grep "OK")
+
+# Cancel is user does not select OK
+if [ ! "$answer" ] ; then
+  osascript -e 'display notification "Program closing" with title "'"$apptitle"'" subtitle "User cancelled"'
+  exit 0
+fi
+
+echo "-------------------------------------"
+echo "Confirmation OK ✅ "
+echo "-------------------------------------"
+
 
 echo "Enter to the macOS startosinstall
 The system will reboot when its finish.
