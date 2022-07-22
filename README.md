@@ -20,6 +20,10 @@ This Script allows you to create a macOS Ventura 13 deployable SSD or to upgrade
 
 ![Screen Shot 2](https://user-images.githubusercontent.com/6248794/180342521-3f8fb708-9544-43df-b2f5-5efc251e190f.png)
 
+![Screen Shot Confirm](https://user-images.githubusercontent.com/6248794/180437725-5eaa37ab-2581-4ae2-a820-7ce29d6c617e.png)
+
+![Screen Shot Confirm OK](https://user-images.githubusercontent.com/6248794/180437748-5bb4b5da-0a5b-4713-a097-5382e84383f5.png)
+
 ![Screen Shot 0](https://user-images.githubusercontent.com/6248794/180342516-10d227da-3deb-4a82-9200-11da57bc3198.png)
 
 
