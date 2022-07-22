@@ -6,6 +6,9 @@ This Script allows you to create a macOS Ventura 13 deployable SSD or to upgrade
 
 	•	Credit: Apple
 	◦	Tester: arcade33, Bumbay, djams2904, Ray-Du
+	
+* This Script also work for macOS Monterey 12, macOS Big Sur 11
+
   
   Download ➤ [Startosinstall Ventura.command](https://github.com/chris1111/Startosinstall-Ventura/raw/Master/Startosinstall%20Ventura.zip)
   
